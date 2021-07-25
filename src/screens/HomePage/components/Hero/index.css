@@ -1,0 +1,22 @@
+.hero-image{
+    width: 50%;
+}
+.home-hero{
+    margin-top: 5rem !important;
+    padding-left: 3rem;
+    padding-right: 3rem;
+}
+.about-text{
+    font-weight: bold
+}
+.hero-buttons{
+    justify-content: left !important;
+}
+.is-pink{
+    background-color: #ea4c89 !important;
+    color: #fff !important;
+}
+.hero-content-column{
+    display: flex;
+    align-self: center !important;
+}

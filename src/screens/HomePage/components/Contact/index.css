@@ -1,0 +1,10 @@
+.contact-section{
+    margin-top: 4rem !important;
+    margin-bottom: 4rem !important;
+    padding-right: 3rem;
+    padding-left: 3rem;
+}
+.contact-image-column{
+    display: flex;
+    align-self: flex-end !important;
+}
