@@ -1,5 +1,7 @@
 import React, { useState } from "react";
+import axios from 'axios';
 import './index.css';
+import Swal from 'sweetalert2'
 
 function Contact() {
 
@@ -9,7 +11,27 @@ function Contact() {
     const [message, setMessage] = useState("");
 
     const submitSMS = () => {
-        console.log(name, email, phone, message)
+        console.log(name, email, phone, message);
+        let sms = 'New message from ' + name + ' \n' + message + " \n contact: " + phone;
+        axios.post('https://react-sesh-sms-3829.twil.io/sendsms', {
+            Body: sms
+        }).then(response => {
+            console.log(response)
+            if (response.data.status === "success") {
+                Swal.fire(
+                    'Message Sent!',
+                    'Successfully sent the message!',
+                    'success'
+                );
+            }
+        }).catch(err => {
+            console.log(err)
+            Swal.fire(
+                'Error!',
+                err,
+                'error'
+            )
+        })
     }
 
     return (
